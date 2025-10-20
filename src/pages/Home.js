@@ -1,16 +1,23 @@
 import React from 'react';
-import selfie from '../assets/images/selfie.jpg';
-import './Page.css'; // A shared stylesheet for pages
+import ClashCard from '../components/ClashCard';
 
 const Home = () => {
+    // Projects data from resume
+    const projects = [
+        { name: 'NoteIt', description: 'A full-stack academic support web application for NUS students to share notes and ask questions.', url: 'https://note-it-drab.vercel.app/' },
+        { name: 'Task Manager Application', description: 'A comprehensive chat application that tracks tasks with a GUI using JavaFX.', url: 'https://github.com/gnahuy123/ip' }
+    ];
+
+    // Blogs data from the project structure
+    const blogs = [
+        { title: 'How to Prepare for CS in University', url: '/blog/prepare-for-cs' },
+        { title: 'Y1S1 Module Review', url: '/blog/y1s1-mod-review' },
+        { title: 'Y1S2 Module Review', url: '/blog/y1s2-mod-review' }
+    ];
+
     return (
-        <div className="page">
-            <header className="page-header">
-                <h1>Hi, I am Yu Hang</h1>
-                <p className="subtitle">A Year 2 Computer Science student at NUS</p>
-            </header>
-            <img src={selfie} alt="Tan Yu Hang" className="profile-pic" />
-            <p>This blog contains my journey at NUS, mod reviews and also gives tips to students doing Computer Science in NUS.</p>
+        <div>
+            <ClashCard projects={projects} blogs={blogs} />
         </div>
     );
 };
