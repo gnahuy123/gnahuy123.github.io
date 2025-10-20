@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d0680fc8.css",
+    "main.js": "/static/js/main.d199f691.js",
+    "static/js/453.bfdf14f3.chunk.js": "/static/js/453.bfdf14f3.chunk.js",
+    "static/media/selfie.jpg": "/static/media/selfie.d2105ad3c1bbc06f16a2.jpg",
+    "static/media/CS2030s-passTestcase.jpg": "/static/media/CS2030s-passTestcase.4983e7da1aa73852ddc9.jpg",
+    "static/media/CS50.jpg": "/static/media/CS50.f6852f954c51cf265b37.jpg",
+    "static/media/Yu_Hang_Resume.pdf": "/static/media/Yu_Hang_Resume.e6b0bc56955dc161e6af.pdf",
+    "static/media/neetcode.png": "/static/media/neetcode.083f2f7dd12e827ac05f.png",
+    "static/media/CS2040s-perf.jpg": "/static/media/CS2040s-perf.b9ddc48f6c559a92509a.jpg",
+    "static/media/balls.jpg": "/static/media/balls.3f825caa51f259e08259.jpg",
+    "static/media/svd.png": "/static/media/svd.1ee0c852c53e6940c081.png",
+    "index.html": "/index.html",
+    "main.d0680fc8.css.map": "/static/css/main.d0680fc8.css.map",
+    "main.d199f691.js.map": "/static/js/main.d199f691.js.map",
+    "453.bfdf14f3.chunk.js.map": "/static/js/453.bfdf14f3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d0680fc8.css",
+    "static/js/main.d199f691.js"
+  ]
+}
