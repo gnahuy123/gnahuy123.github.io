@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
-import projectData from '../projectData';
+import projectData from '../data/projectData';
 
 const ProjectsLayout = () => {
     return (

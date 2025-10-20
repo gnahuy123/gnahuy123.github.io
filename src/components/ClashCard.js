@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './ClashCard.css';
 
-const ClashCard = ({ projects, blogs }) => {
-    const [mode, setMode] = useState('projects');
+const ClashCard = ({ projects, blogs, personData }) => {
+    const [mode, setMode] = useState('blogs');
 
     const DamageIcon = () => (
         <svg width="32" height="32" viewBox="0 0 32 32" className="clash-card__icon">
@@ -63,7 +63,7 @@ const ClashCard = ({ projects, blogs }) => {
                 <div className="clash-card__header">
                     <div className="clash-card__header-top">
                         <h1 className="clash-card__title">
-                            Portfolio Knight
+                            {personData.name}
                         </h1>
                         <button className="clash-card__close-btn">
                             ×
@@ -76,13 +76,13 @@ const ClashCard = ({ projects, blogs }) => {
                             onClick={() => setMode('projects')}
                             className={`clash-card__toggle-btn ${mode === 'projects' ? 'clash-card__toggle-btn--active' : ''}`}
                         >
-                            Projects Mode
+                            Projects
                         </button>
                         <button
                             onClick={() => setMode('blogs')}
                             className={`clash-card__toggle-btn ${mode === 'blogs' ? 'clash-card__toggle-btn--active' : ''}`}
                         >
-                            Blogs Mode
+                            Blogs
                         </button>
                     </div>
                 </div>
@@ -120,7 +120,7 @@ const ClashCard = ({ projects, blogs }) => {
 
                             <div className="clash-card__description">
                                 <p className="clash-card__description-text">
-                                    <strong>A tough melee fighter.</strong> The Barbarian's handsome, cultured cousin. Rumor has it that he was knighted based on the sheer awesomeness of his mustache alone.
+                                    {personData.description}
                                 </p>
                             </div>
                         </div>
@@ -128,7 +128,8 @@ const ClashCard = ({ projects, blogs }) => {
 
                     {/* Stats Grid */}
                     <div className="clash-card__stats-grid">
-                        {currentData.map((item, index) => {
+                        {currentData.length > 0 ?
+                            currentData.map((item, index) => {
                             const IconComponent = [DamageIcon, DPSIcon, HPIcon, HitSpeedIcon, TargetIcon, SpeedIcon][index % 6];
                             const colorClasses = [
                                 'clash-card__stat-item--red',
@@ -159,7 +160,8 @@ const ClashCard = ({ projects, blogs }) => {
                                         ) : (
                                             <>
                                                 <div className="clash-card__stat-name">{item.title}</div>
-                                                <div className="clash-card__stat-date">{item.date.toLocaleDateString('en-GB', {
+                                                <div className="clash-card__stat-date">{item.date
+                                                    .toLocaleDateString('en-GB', {
                                                     day: '2-digit',
                                                     month: 'short',
                                                     year: 'numeric'
@@ -170,7 +172,13 @@ const ClashCard = ({ projects, blogs }) => {
                                     </div>
                                 </a>
                             );
-                        })}
+                        })
+                        :
+                        <div className="clash-card__rarity-section">
+                            <div className="clash-card__rarity-item">
+                                Project Section under construction! Coming soon
+                            </div>
+                        </div>}
                     </div>
                 </div>
             </div>

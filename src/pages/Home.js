@@ -1,7 +1,8 @@
 import React from 'react';
 import ClashCard from '../components/ClashCard';
-import blogData from '../blogData';
-import projectData from '../projectData';
+import blogData from '../data/blogData';
+import projectData from '../data/projectData';
+import personData from "../data/personData";
 
 const Home = () => {
     const blogs = blogData.map(post => ({
@@ -18,7 +19,7 @@ const Home = () => {
 
     return (
         <div>
-            <ClashCard projects={projects} blogs={blogs} />
+            <ClashCard projects={projects} blogs={blogs} personData={personData} />
         </div>
     );
 };

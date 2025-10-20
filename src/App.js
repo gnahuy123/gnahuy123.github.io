@@ -12,8 +12,8 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
-import blogData from './blogData';
-import projectData from './projectData';
+import blogData from './data/blogData';
+import projectData from './data/projectData';
 
 function App() {
     return (

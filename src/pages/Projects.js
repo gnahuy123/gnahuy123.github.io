@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Page.css';
-import projectData from '../projectData';
+import projectData from '../data/projectData';
 
 const Projects = () => {
     return (
@@ -11,13 +11,19 @@ const Projects = () => {
             </header>
             <section>
                 <p>Here are some of the projects I've worked on.</p>
-                <ul className="blog-list">
-                    {projectData.map((project, index) => (
-                        <li key={index}>
-                            <Link to={`/projects/${project.path}`}>{project.name}</Link>
-                        </li>
-                    ))}
-                </ul>
+                {
+                    projectData > 0 ?
+                        <ul className="blog-list">
+                        {projectData.map((project, index) => (
+                            <li key={index}>
+                                <Link to={`/projects/${project.path}`}>{project.name}</Link>
+                            </li>
+                        ))}
+                    </ul>
+                        :
+                        <p> This section is under construction! Please check back again</p>
+                }
+
             </section>
         </div>
     );

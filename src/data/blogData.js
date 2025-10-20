@@ -1,6 +1,6 @@
-import PrepareForCS from './pages/blog/PrepareForCS';
-import Y1S1 from './pages/blog/Y1S1';
-import Y1S2 from './pages/blog/Y1S2';
+import PrepareForCS from '../pages/blog/PrepareForCS';
+import Y1S1 from '../pages/blog/Y1S1';
+import Y1S2 from '../pages/blog/Y1S2';
 
 const blogData = [
     {

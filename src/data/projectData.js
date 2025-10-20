@@ -1,7 +1,11 @@
-import NoteIt from './pages/projects/NoteIt';
-import TaskManager from './pages/projects/TaskManager';
+import NoteIt from '../pages/projects/NoteIt';
+import TaskManager from '../pages/projects/TaskManager';
 
 //Order by what you want to show first
+
+const projectData = [];
+
+/*
 const projectData = [
     {
         name: 'NoteIt',
@@ -18,5 +22,6 @@ const projectData = [
         url: 'https://github.com/gnahuy123/ip',
     }
 ];
+*/
 
 export default projectData;
