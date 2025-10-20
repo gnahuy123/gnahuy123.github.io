@@ -1,7 +1,7 @@
 import React from 'react';
-import passTestcaseImg from '../assets/images/CS2030s-passTestcase.jpg';
-import perfImg from '../assets/images/CS2040s-perf.jpg';
-import './Page.css';
+import passTestcaseImg from '../../assets/images/CS2030s-passTestcase.jpg';
+import perfImg from '../../assets/images/CS2040s-perf.jpg';
+import '../Page.css';
 
 const Y1S2 = () => {
     return (

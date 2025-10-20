@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #f4f4f9;
   color: #333;
+  padding-top: 60px; /* Height of the navbar */
 }
 
 .app-container {
@@ -16,5 +17,10 @@ body {
 .content {
   flex-grow: 1;
   padding: 2rem;
+  margin-left: 0; /* Default margin */
+}
+
+/* Specific adjustment for content when sidebar is present */
+.app-container .content {
   margin-left: 250px; /* Same as the sidebar width */
 }

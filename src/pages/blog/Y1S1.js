@@ -1,8 +1,8 @@
 import React from 'react';
-import linkedlistImg from '../assets/images/linkedlistCS50.png';
-import ballsImg from '../assets/images/balls.jpg';
-import svdImg from '../assets/images/svd.png';
-import './Page.css';
+import linkedlistImg from '../../assets/images/linkedlistCS50.png';
+import ballsImg from '../../assets/images/balls.jpg';
+import svdImg from '../../assets/images/svd.png';
+import '../Page.css';
 
 const Y1S1 = () => {
     return (

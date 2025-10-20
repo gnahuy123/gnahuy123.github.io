@@ -1,7 +1,7 @@
 import React from 'react';
-import cs50Img from '../assets/images/CS50.jpg';
-import neetcodeImg from '../assets/images/neetcode.png';
-import './Page.css';
+import cs50Img from '../../assets/images/CS50.jpg';
+import neetcodeImg from '../../assets/images/neetcode.png';
+import '../Page.css';
 
 const PrepareForCS = () => {
     return (
