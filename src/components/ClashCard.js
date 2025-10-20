@@ -159,7 +159,12 @@ const ClashCard = ({ projects, blogs }) => {
                                         ) : (
                                             <>
                                                 <div className="clash-card__stat-name">{item.title}</div>
-                                                <div className="clash-card__stat-date">{item.date}</div>
+                                                <div className="clash-card__stat-date">{item.date.toLocaleDateString('en-GB', {
+                                                    day: '2-digit',
+                                                    month: 'short',
+                                                    year: 'numeric'
+                                                })}
+                                                </div>
                                             </>
                                         )}
                                     </div>

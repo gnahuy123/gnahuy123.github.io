@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Page.css';
+import projectData from '../projectData';
 
 const Projects = () => {
     return (
@@ -8,7 +10,14 @@ const Projects = () => {
                 <h1>My Projects</h1>
             </header>
             <section>
-                <p>This section is currently under construction. Please check back later for updates on my projects!</p>
+                <p>Here are some of the projects I've worked on.</p>
+                <ul className="blog-list">
+                    {projectData.map((project, index) => (
+                        <li key={index}>
+                            <Link to={`/projects/${project.path}`}>{project.name}</Link>
+                        </li>
+                    ))}
+                </ul>
             </section>
         </div>
     );

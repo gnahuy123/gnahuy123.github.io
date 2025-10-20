@@ -1,18 +1,19 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './Sidebar.css'; // For styling
-import resume from '../assets/files/Yu_Hang_Resume.pdf'; // Make sure to move the resume to this path
+import './Sidebar.css';
 
-const Sidebar = () => {
+const Sidebar = ({ title, items, basePath }) => {
     return (
         <div className="sidebar">
             <div className="sidebar-header">
-                <h2>Navigation</h2>
+                <h2>{title}</h2>
             </div>
             <nav className="sidebar-nav">
-                <NavLink to="/blog/prepare-for-cs" activeClassName="active">How to Prepare for CS</NavLink>
-                <NavLink to="/blog/y1s1-mod-review" activeClassName="active">Y1S1 Module Review</NavLink>
-                <NavLink to="/blog/y1s2-mod-review" activeClassName="active">Y1S2 Module Review</NavLink>
+                {items.map((item, index) => (
+                    <NavLink key={index} to={`${basePath}/${item.path}`} activeClassName="active">
+                        {item.title || item.name}
+                    </NavLink>
+                ))}
             </nav>
         </div>
     );

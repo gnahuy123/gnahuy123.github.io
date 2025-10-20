@@ -2,14 +2,14 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
-import blogData from '../blogData';
+import projectData from '../projectData';
 
-const BlogLayout = () => {
+const ProjectsLayout = () => {
     return (
         <>
             <Navbar />
             <div className="app-container">
-                <Sidebar title="Blog" items={blogData} basePath="/blog" />
+                <Sidebar title="Projects" items={projectData} basePath="/projects" />
                 <main className="content">
                     <Outlet />
                 </main>
@@ -18,4 +18,4 @@ const BlogLayout = () => {
     );
 };
 
-export default BlogLayout;
+export default ProjectsLayout;
