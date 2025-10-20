@@ -1,14 +1,15 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import './Navbar.css';
+import logo from '../logo.svg';
 
 const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="navbar-container">
-                <NavLink to="/" className="navbar-logo">
-                    Tan Yu Hang
-                </NavLink>
+                <Link to="/" className="navbar-logo">
+                    <img src={logo} alt="Logo" />
+                </Link>
                 <div className="navbar-links">
                     <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
                         Home
