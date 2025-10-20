@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './ClashCard.css';
+import realProfilePic from '../assets/images/selfie_cr.png';
+import CRprofilePic from  '../assets/images/selfie_evo.jpg';
 
 const ClashCard = ({ projects, blogs, personData }) => {
     const [mode, setMode] = useState('blogs');
@@ -94,7 +96,10 @@ const ClashCard = ({ projects, blogs, personData }) => {
                         <div className="clash-card__image-section">
                             <div className="clash-card__image-container">
                                 <div className="clash-card__image">
-                                    <div className="clash-card__emoji">🤴</div>
+                                    {mode === "blogs"
+                                        ? <img src={CRprofilePic} alt="me!"></img>
+                                        : <img src={realProfilePic} alt="me!"></img>
+                                    }
                                 </div>
                                 <div className="clash-card__elixir">
                                     <span className="clash-card__elixir-icon">🏠</span>
