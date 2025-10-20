@@ -1,5 +1,5 @@
-import NoteIt from '../pages/projects/NoteIt';
-import TaskManager from '../pages/projects/TaskManager';
+//import NoteIt from '../pages/projects/NoteIt';
+//import TaskManager from '../pages/projects/TaskManager';
 
 //Order by what you want to show first
 
