@@ -5,7 +5,7 @@ import shardPng from '../../assets/images/shard.png';
 import coinPng from '../../assets/images/coin.png';
 
 // Main CardDetails Component
-function ClashCard({coins, setCoins, shards, setShards}) {
+function ClashCard({coins, shards, data}) {
     // Single state to track the current mode: 'experience', 'project', or 'blog'
     const [activeTab, setActiveTab] = useState('experience');
 
@@ -26,7 +26,7 @@ function ClashCard({coins, setCoins, shards, setShards}) {
                 </div>
 
                 <CardPreview activeTab={activeTab} />
-                <CardInfo activeTab={activeTab} />
+                <CardInfo activeTab={activeTab} data={data}/>
                 <GameplaySection />
                 <UpgradeSection activeTab={activeTab} setActiveTab={setActiveTab} />
             </div>
@@ -61,10 +61,10 @@ function CardPreview({ activeTab }) {
 }
 
 // Card Info Component
-function CardInfo({ activeTab }) {
+function CardInfo({ activeTab, data}) {
     return (
         <div className="card-info">
-            <h1 className="card-name">Tan Yu Hang</h1>
+            <h1 className="card-name">{data.personData.name}</h1>
             {activeTab === 'project' && <h2 className="project-subtitle">Projects</h2>}
             {activeTab === 'blog' && <h2 className="blog-subtitle">Blog</h2>}
             {activeTab === 'experience' && <h2 className="experience-subtitle">Experience</h2>}

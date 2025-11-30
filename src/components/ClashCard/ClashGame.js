@@ -1,6 +1,4 @@
 // ClashGame.js
-import shardPng from '../../assets/images/shard.png';
-import coinPng from '../../assets/images/coin.png';
 import React, { useState } from 'react';
 import ClashCard from "./ClashCard";
 import ClashBackground from "./ClashBackground";
@@ -19,9 +17,8 @@ function ClashGame({data}) {
             />
             <ClashCard
                 coins={coins}
-                setCoins={setCoins}
                 shards={shards}
-                setShards={setShards}
+                data={data}
             />
         </div>
     );
