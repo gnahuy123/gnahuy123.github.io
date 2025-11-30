@@ -1,5 +1,4 @@
 import React from 'react';
-import ClashCard from '../components/ClashCard/ClashCard';
 import blogData from '../data/blogData';
 import projectData from '../data/projectData';
 import personData from "../data/personData";
