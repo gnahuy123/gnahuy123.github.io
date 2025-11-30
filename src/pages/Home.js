@@ -1,8 +1,10 @@
 import React from 'react';
-import ClashCard from '../components/ClashCard';
+import ClashCard from '../components/ClashCard/ClashCard';
 import blogData from '../data/blogData';
 import projectData from '../data/projectData';
 import personData from "../data/personData";
+import experienceData from "../data/experienceData";
+import ClashGame from "../components/ClashCard/ClashGame";
 
 const Home = () => {
     const blogs = blogData.map(post => ({
@@ -17,9 +19,16 @@ const Home = () => {
         url: project.url
     }));
 
+    const data = {
+        personData: personData,
+        blogData: blogs,
+        projectData: projects,
+        experienceData: experienceData
+    }
+
     return (
         <div>
-            <ClashCard projects={projects} blogs={blogs} personData={personData} />
+            <ClashGame data={data}/>
         </div>
     );
 };

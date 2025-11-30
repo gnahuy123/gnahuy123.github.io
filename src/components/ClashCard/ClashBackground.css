@@ -1,0 +1,82 @@
+/* ClashBackground.css */
+
+.clash-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 50%, #1c3a63 0%, #0e1824 100%);
+    overflow: hidden;
+    z-index: 1; /* Lowest level, but above body */
+}
+
+/* Optional: Adds a moving fog effect for atmosphere */
+.fog-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/waves.png');
+    opacity: 0.1;
+    animation: moveFog 60s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes moveFog {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.floating-item {
+    position: absolute;
+    bottom: -60px; /* Start below screen */
+    cursor: pointer;
+    user-select: none;
+    animation-name: floatUp;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    transition: transform 0.1s;
+    z-index: 2;
+}
+
+.floating-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+}
+
+/* Add a wobble to the shards to distinguish them */
+.floating-item.shard img {
+    animation: wobble 2s ease-in-out infinite;
+}
+
+.floating-item:active {
+    transform: scale(1.2); /* Pop effect on click */
+    filter: brightness(1.5);
+}
+
+/* Keyframes */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg); /* Move past top of screen */
+        opacity: 0;
+    }
+}
+
+@keyframes wobble {
+    0%, 100% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+}
