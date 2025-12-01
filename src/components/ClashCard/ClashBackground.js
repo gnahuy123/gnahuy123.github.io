@@ -2,10 +2,12 @@ import React, { useState, useEffect, useCallback } from 'react';
 import './ClashBackground.css';
 import shardPng from '../../assets/images/shard.png';
 import coinPng from '../../assets/images/coin.png';
+import { useAppContext } from '../../context/AppContext';
 
 const MAX_ITEMS = 15; // Limit items to prevent DOM overload
 
-function ClashBackground({ coins, setCoins, shards, setShards }) {
+function ClashBackground() {
+    const { incrementCoins, incrementShards } = useAppContext();
     const [items, setItems] = useState([]);
 
     // Helper to generate a random floating item
@@ -35,11 +37,11 @@ function ClashBackground({ coins, setCoins, shards, setShards }) {
     const handleItemClick = (e, id, type) => {
         e.stopPropagation(); // Prevent clicking through to elements behind
 
-        // Update Parent State
+        // Update Context State
         if (type === 'coin') {
-            setCoins(prev => prev + 1);
+            incrementCoins();
         } else {
-            setShards(prev => prev + 1);
+            incrementShards();
         }
 
         // Remove item immediately

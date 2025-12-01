@@ -1,13 +1,14 @@
 // ClashCard.js
-import React, { useState } from 'react';
+import React from 'react';
 import './ClashCard.css';
 import shardPng from '../../assets/images/shard.png';
 import coinPng from '../../assets/images/coin.png';
+import { useAppContext } from '../../context/AppContext';
 
 // Main CardDetails Component
-function ClashCard({coins, shards, data}) {
-    // Single state to track the current mode: 'experience', 'project', or 'blog'
-    const [activeTab, setActiveTab] = useState('experience');
+function ClashCard({ data }) {
+    // Access state from AppContext
+    const { coins, shards, activeTab, setActiveTab } = useAppContext();
 
     return (
         <div className="clash-card-wrapper">
