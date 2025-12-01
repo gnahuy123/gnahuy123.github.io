@@ -1,61 +1,85 @@
 .navbar {
     width: 100%;
-    background-color: #ffffff;
-    border-bottom: 1px solid #e0e0e0;
+    background: #3b5585; /* Panel Blue */
+    border-bottom: var(--cr-border-width) solid var(--cr-border-color);
     padding: 0 2rem;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 0 rgba(0,0,0,0.5);
+    height: 70px;
+    box-sizing: border-box;
 }
 
 .navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    height: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .navbar-logo {
-    color: #1a1a1a;
+    color: #fff;
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: var(--cr-text-shadow);
+    -webkit-text-stroke: var(--cr-text-stroke);
+    display: flex;
+    align-items: center;
+    transition: transform 0.1s;
 }
 
+.navbar-logo img {
+    height: 40px;
+    margin-right: 10px;
+    filter: drop-shadow(2px 2px 0 #000);
+}
+
+.navbar-logo:active {
+    transform: scale(0.95);
+}
+
+/* --- Navigation Links --- */
 .navbar-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .nav-link {
-    color: #333;
+    color: #fff;
     text-decoration: none;
     font-size: 1rem;
-    padding: 0.5rem 0;
-    position: relative;
-    transition: color 0.2s;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background-color: rgba(0,0,0,0.3);
+    border: 2px solid transparent;
+    transition: all 0.1s;
+    text-shadow: 1px 1px 0 #000;
 }
 
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #007bff;
-    transition: width 0.3s ease;
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-    width: 100%;
+.nav-link:hover {
+    background-color: rgba(255,255,255,0.1);
+    border-color: #8ba3c7;
+    transform: scale(1.05);
 }
 
 .nav-link.active {
-    color: #007bff;
+    background-color: var(--cr-blue-glow);
+    border-color: #000;
+    box-shadow: 0 3px 0 #182b75;
+    font-weight: bold;
+}
+
+.nav-link.active:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.nav-link::after {
+    display: none;
 }

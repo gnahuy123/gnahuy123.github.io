@@ -1,35 +1,20 @@
 // ClashCard.js
 import React from 'react';
 import './ClashCard.css';
-import shardPng from '../../assets/images/shard.png';
-import coinPng from '../../assets/images/coin.png';
 import { useAppContext } from '../../context/AppContext';
 
 // Main CardDetails Component
 function ClashCard({ data }) {
     // Access state from AppContext
-    const { coins, shards, activeTab, setActiveTab } = useAppContext();
+    const { activeTab, setActiveTab } = useAppContext();
 
     return (
         <div className="clash-card-wrapper">
             <div className="card-details-container">
-                <div className="top-bar">
-                    <div className="resource-bars">
-                        <div className="coin-bar">
-                            <img src={coinPng} alt="Gold" className="resource-icon" />
-                            <span className="resource-value">{coins}</span>
-                        </div>
-                        <div className="shards-bar">
-                            <img src={shardPng} alt="Shards" className="resource-icon" />
-                            <span className="resource-value">{shards}</span>
-                        </div>
-                    </div>
-                </div>
-
                 <CardPreview activeTab={activeTab} />
                 <CardInfo activeTab={activeTab} data={data}/>
                 <GameplaySection />
-                <UpgradeSection activeTab={activeTab} setActiveTab={setActiveTab} />
+                <UpgradeSection setActiveTab={setActiveTab} />
             </div>
         </div>
     );
@@ -93,7 +78,7 @@ function GameplaySection() {
 }
 
 // Upgrade Section Component
-function UpgradeSection({ activeTab, setActiveTab }) {
+function UpgradeSection({ setActiveTab }) {
     // Define all possible modes
     const allModes = [
         { id: 'experience', label: 'Experience', styleClass: 'btn-experience' },
@@ -101,12 +86,9 @@ function UpgradeSection({ activeTab, setActiveTab }) {
         { id: 'blog',       label: 'Blog',       styleClass: 'btn-blog' }
     ];
 
-    // Filter out the currently active mode to get the buttons to display
-    const availableButtons = allModes.filter(mode => mode.id !== activeTab);
-
     return (
         <div className="upgrade-section">
-            {availableButtons.map((btn) => (
+            {allModes.map((btn) => (
                 <button
                     key={btn.id}
                     className={`upgrade-button ${btn.styleClass}`}

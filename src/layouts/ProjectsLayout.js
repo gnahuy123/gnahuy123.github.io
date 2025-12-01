@@ -8,7 +8,7 @@ const ProjectsLayout = () => {
     return (
         <>
             <Navbar />
-            <div className="app-container">
+            <div className="app-container with-sidebar">
                 <Sidebar title="Projects" items={projectData} basePath="/projects" />
                 <main className="content">
                     <Outlet />

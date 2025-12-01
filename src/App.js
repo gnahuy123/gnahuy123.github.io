@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { AppProvider } from './context/AppContext';
+import ClashBackground from './components/ClashCard/ClashBackground';
 
 // Layouts
 import MainLayout from './layouts/MainLayout';
@@ -19,6 +20,9 @@ import projectData from './data/projectData';
 function App() {
     return (
         <AppProvider>
+            {/* Global Background placed here so it persists across all routes */}
+            <ClashBackground />
+
             <Router>
                 <Routes>
                     {/* Routes with the main layout (Navbar only) */}

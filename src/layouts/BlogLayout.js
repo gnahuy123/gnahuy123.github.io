@@ -8,7 +8,7 @@ const BlogLayout = () => {
     return (
         <>
             <Navbar />
-            <div className="app-container">
+            <div className="app-container with-sidebar">
                 <Sidebar title="Blog" items={blogData} basePath="/blog" />
                 <main className="content">
                     <Outlet />
@@ -18,4 +18,4 @@ const BlogLayout = () => {
     );
 };
 
-export default BlogLayout;
+export default BlogLayout;;

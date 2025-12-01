@@ -1,80 +1,116 @@
 .sidebar {
     width: 250px;
-    height: 100vh;
+    height: calc(100vh - 70px); /* Full height minus navbar */
     position: fixed;
     left: 0;
-    top: 0;
-    background-color: #ffffff;
+    top: 70px; /* Push down by navbar height */
+    /* Dark panel gradient */
+    background: linear-gradient(180deg, #2b1d42 0%, #1c3a63 100%);
     padding: 1.5rem;
-    border-right: 1px solid #e0e0e0;
+    border-right: var(--cr-border-width) solid var(--cr-border-color);
     display: flex;
     flex-direction: column;
+    z-index: 900;
+    box-shadow: 4px 0 10px rgba(0,0,0,0.5);
+    overflow-y: auto;
+    pointer-events: auto; /* KEY FIX: Re-enable clicking on the sidebar */
 }
 
 .sidebar-header h2 {
-    margin: 0 0 2rem 0;
-    color: #1a1a1a;
+    margin: 0 0 1.5rem 0;
+    color: #fff;
     font-size: 1.5rem;
     text-align: center;
+    text-transform: uppercase;
+    text-shadow: var(--cr-text-shadow);
+    -webkit-text-stroke: var(--cr-text-stroke);
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
 }
 
 .sidebar-nav {
     display: flex;
     flex-direction: column;
+    gap: 8px;
 }
 
 .sidebar-nav a {
-    color: #333;
+    color: #fff;
     text-decoration: none;
-    padding: 0.75rem 1rem;
-    margin-bottom: 0.5rem;
+    padding: 0.8rem;
     border-radius: 8px;
-    transition: background-color 0.2s, color 0.2s;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px solid #1a2a44;
+    transition: all 0.1s;
+    text-align: center;
+    font-size: 0.9rem;
+    text-shadow: 1px 1px 0 #000;
 }
 
 .sidebar-nav a:hover {
-    background-color: #f0f0f0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--cr-yellow-glow);
+    transform: scale(1.02);
 }
 
 .sidebar-nav a.active {
-    background-color: #007bff;
-    color: white;
+    background-color: var(--cr-yellow-glow);
+    color: #fff;
     font-weight: bold;
+    border: 2px solid #000;
+    box-shadow: 0 4px 0 #b87312;
+    transform: translateY(-2px);
+}
+
+.sidebar-nav a.active:active {
+    transform: translateY(2px);
+    box-shadow: none;
 }
 
 .sidebar-footer {
     margin-top: auto;
-    border-top: 1px solid #e0e0e0;
+    border-top: 2px solid rgba(255,255,255,0.1);
     padding-top: 1.5rem;
+    text-align: center;
 }
 
 .sidebar-footer h3 {
     font-size: 1.1rem;
-    color: #555;
-}
-
-.sidebar-footer p {
-    margin: 0.5rem 0;
+    color: #8ba3c7;
+    margin-bottom: 10px;
 }
 
 .sidebar-footer a {
-    color: #007bff;
+    color: var(--cr-blue-glow);
     text-decoration: none;
 }
 
 .download-button {
-    display: block;
+    display: inline-block;
     width: 100%;
-    padding: 0.75rem;
+    padding: 1rem;
     margin-top: 1rem;
-    background-color: #28a745;
+    background-color: var(--cr-green-btn);
     color: white;
     text-align: center;
     border-radius: 8px;
     text-decoration: none;
-    transition: background-color 0.2s;
+    border: 2px solid #000;
+    box-shadow: 0 4px 0 var(--cr-green-shadow);
+    font-family: var(--font-stack);
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 #000;
+    transition: all 0.1s;
+    cursor: pointer;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.download-button:active {
+    transform: translateY(4px);
+    box-shadow: none;
 }
 
 .download-button:hover {
-    background-color: #218838;
+    filter: brightness(1.1);
 }

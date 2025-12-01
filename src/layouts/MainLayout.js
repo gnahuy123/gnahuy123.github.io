@@ -6,9 +6,11 @@ const MainLayout = () => {
     return (
         <>
             <Navbar />
-            <main className="content">
-                <Outlet />
-            </main>
+            <div className="app-container">
+                <main className="content">
+                    <Outlet />
+                </main>
+            </div>
         </>
     );
 };

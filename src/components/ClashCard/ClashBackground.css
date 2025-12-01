@@ -39,6 +39,7 @@
     animation-fill-mode: forwards;
     transition: transform 0.1s;
     z-index: 2;
+    pointer-events: auto; /* KEY FIX: Explicitly allow clicking */
 }
 
 .floating-item img {
