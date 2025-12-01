@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../logo.svg';
-import ResourceDisplay from './ResourceDisplay'; // Import the new component
+import ResourceDisplay from './ResourceDisplay';
 
 const Navbar = () => {
     return (
@@ -25,6 +25,9 @@ const Navbar = () => {
                     <NavLink to="/projects" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
                         Projects
                     </NavLink>
+                    <NavLink to="/experience" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+                        Experience
+                    </NavLink>
                     <NavLink to="/contact" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
                         Contact Me
                     </NavLink>
@@ -34,4 +37,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;;
+export default Navbar;

@@ -1,56 +1,19 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React from 'react';
 import './ClashBackground.css';
+import { useAppContext } from '../../context/AppContext';
+import { useFloatingItems } from '../../hooks/useFloatingItems'; // Import hook
 import shardPng from '../../assets/images/shard.png';
 import coinPng from '../../assets/images/coin.png';
-import { useAppContext } from '../../context/AppContext';
-
-const MAX_ITEMS = 15; // Limit items to prevent DOM overload
 
 function ClashBackground() {
     const { incrementCoins, incrementShards } = useAppContext();
-    const [items, setItems] = useState([]);
+    const { items, removeItem } = useFloatingItems(15);
 
-    // Helper to generate a random floating item
-    const spawnItem = useCallback(() => {
-        const id = Date.now() + Math.random();
-        const type = Math.random() > 0.8 ? 'shard' : 'coin'; // 20% chance for shard, 80% for coin
-        const startLeft = Math.random() * 90; // 0% to 90% width
-        const duration = 4 + Math.random() * 6; // 4s to 10s float time
-        const size = 30 + Math.random() * 20; // 30px to 50px
-
-        return { id, type, startLeft, duration, size };
-    }, []);
-
-    // Spawning Logic
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setItems(currentItems => {
-                if (currentItems.length >= MAX_ITEMS) return currentItems;
-                return [...currentItems, spawnItem()];
-            });
-        }, 800); // Spawn every 800ms
-
-        return () => clearInterval(interval);
-    }, [spawnItem]);
-
-    // Handle Click (Collect Item)
     const handleItemClick = (e, id, type) => {
-        e.stopPropagation(); // Prevent clicking through to elements behind
-
-        // Update Context State
-        if (type === 'coin') {
-            incrementCoins();
-        } else {
-            incrementShards();
-        }
-
-        // Remove item immediately
-        setItems(prev => prev.filter(item => item.id !== id));
-    };
-
-    // Remove item when animation ends (reaches top)
-    const handleAnimationEnd = (id) => {
-        setItems(prev => prev.filter(item => item.id !== id));
+        e.stopPropagation();
+        if (type === 'coin') incrementCoins();
+        else incrementShards();
+        removeItem(id);
     };
 
     return (
@@ -67,7 +30,7 @@ function ClashBackground() {
                         animationDuration: `${item.duration}s`
                     }}
                     onClick={(e) => handleItemClick(e, item.id, item.type)}
-                    onAnimationEnd={() => handleAnimationEnd(item.id)}
+                    onAnimationEnd={() => removeItem(item.id)}
                 >
                     <img
                         src={item.type === 'coin' ? coinPng : shardPng}
@@ -79,5 +42,4 @@ function ClashBackground() {
         </div>
     );
 }
-
 export default ClashBackground;

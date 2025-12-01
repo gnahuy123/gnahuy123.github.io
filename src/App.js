@@ -14,6 +14,7 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
+import Experience from './pages/Experience'; // Import the new page
 import blogData from './data/blogData';
 import projectData from './data/projectData';
 
@@ -28,6 +29,7 @@ function App() {
                     {/* Routes with the main layout (Navbar only) */}
                     <Route element={<MainLayout />}>
                         <Route path="/" element={<Home />} />
+                        <Route path="/experience" element={<Experience />} /> {/* New Route */}
                         <Route path="/contact" element={<Contact />} />
                     </Route>
 
