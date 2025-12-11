@@ -1,11 +1,8 @@
-//import NoteIt from '../pages/projects/NoteIt';
-//import TaskManager from '../pages/projects/TaskManager';
+import NoteIt from '../pages/projects/NoteIt';
+import TaskManager from '../pages/projects/TaskManager';
 
 //Order by what you want to show first
 
-const projectData = [];
-
-/*
 const projectData = [
     {
         name: 'NoteIt',
@@ -13,6 +10,7 @@ const projectData = [
         path: 'noteit',
         component: NoteIt,
         url: 'https://note-it-drab.vercel.app/',
+        date: new Date('2024-01-01'), // Added date for sorting
     },
     {
         name: 'Task Manager Application',
@@ -20,8 +18,8 @@ const projectData = [
         path: 'task-manager',
         component: TaskManager,
         url: 'https://github.com/gnahuy123/ip',
+        date: new Date('2023-12-01'), // Added date for sorting
     }
 ];
-*/
 
 export default projectData;

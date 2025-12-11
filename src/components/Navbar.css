@@ -1,13 +1,17 @@
 .navbar {
     width: 100%;
-    background: #3b5585; /* Panel Blue */
-    border-bottom: var(--cr-border-width) solid var(--cr-border-color);
+    /* Glass Effect */
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-bottom: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+
     padding: 0 2rem;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0 4px 0 rgba(0,0,0,0.5);
     height: 70px;
     box-sizing: border-box;
 }
@@ -56,14 +60,14 @@
     font-size: 1rem;
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     border: 2px solid transparent;
     transition: all 0.1s;
     text-shadow: 1px 1px 0 #000;
 }
 
 .nav-link:hover {
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     border-color: #8ba3c7;
     transform: scale(1.05);
 }

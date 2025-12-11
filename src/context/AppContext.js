@@ -6,9 +6,13 @@ export const AppProvider = ({ children }) => {
     const [coins, setCoins] = useState(0);
     const [shards, setShards] = useState(0);
     const [activeTab, setActiveTab] = useState('experience');
+    const [lastGameEvent, setLastGameEvent] = useState(null); // { type: 'win' | 'lose', id: number }
+    const [isMuted, setIsMuted] = useState(true);
 
     const incrementCoins = (amount = 1) => setCoins(prev => prev + amount);
     const incrementShards = (amount = 1) => setShards(prev => prev + amount);
+    const triggerGameEvent = (type) => setLastGameEvent({ type, id: Date.now() });
+    const toggleMute = () => setIsMuted(prev => !prev);
 
     return (
         <AppContext.Provider value={{
@@ -19,7 +23,11 @@ export const AppProvider = ({ children }) => {
             setShards,
             incrementShards,
             activeTab,
-            setActiveTab
+            setActiveTab,
+            lastGameEvent,
+            triggerGameEvent,
+            isMuted,
+            toggleMute
         }}>
             {children}
         </AppContext.Provider>

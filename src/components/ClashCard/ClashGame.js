@@ -1,9 +1,10 @@
 // ClashGame.js
 import React from 'react';
 import ClashCard from "./ClashCard";
+
 // Removed local ClashBackground import as it's now global in App.js
 
-function ClashGame({data}) {
+function ClashGame({ data }) {
     // State is now managed in AppContext
 
     return (

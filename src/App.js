@@ -18,9 +18,12 @@ import Experience from './pages/Experience'; // Import the new page
 import blogData from './data/blogData';
 import projectData from './data/projectData';
 
+import GameEffects from './components/effects/GameEffects';
+
 function App() {
     return (
         <AppProvider>
+            <GameEffects />
             {/* Global Background placed here so it persists across all routes */}
             <ClashBackground />
 

@@ -12,13 +12,14 @@ function ClashCard({ data }) {
         <div className="clash-card-wrapper">
             <div className="card-details-container">
                 <CardPreview activeTab={activeTab} />
-                <CardInfo activeTab={activeTab} data={data}/>
+                <CardInfo activeTab={activeTab} data={data} />
                 <GameplaySection />
                 <UpgradeSection setActiveTab={setActiveTab} />
             </div>
         </div>
     );
 }
+
 
 // Card Preview Component
 function CardPreview({ activeTab }) {
@@ -47,7 +48,7 @@ function CardPreview({ activeTab }) {
 }
 
 // Card Info Component
-function CardInfo({ activeTab, data}) {
+function CardInfo({ activeTab, data }) {
     return (
         <div className="card-info">
             <h1 className="card-name">{data.personData.name}</h1>
@@ -82,8 +83,8 @@ function UpgradeSection({ setActiveTab }) {
     // Define all possible modes
     const allModes = [
         { id: 'experience', label: 'Experience', styleClass: 'btn-experience' },
-        { id: 'project',    label: 'Projects',   styleClass: 'btn-project' },
-        { id: 'blog',       label: 'Blog',       styleClass: 'btn-blog' }
+        { id: 'project', label: 'Projects', styleClass: 'btn-project' },
+        { id: 'blog', label: 'Blog', styleClass: 'btn-blog' }
     ];
 
     return (

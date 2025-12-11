@@ -1,5 +1,14 @@
 :root {
-  /* Colors extracted from ClashCard.css */
+  /* --- Global Design Token --- */
+  /* Neat / Modern Glass Theme */
+  --glass-bg: rgba(60, 60, 80, 0.4);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --glass-blur: blur(10px);
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+
+  /* Clash Specific Tokens (Keep these for ClashCard) */
   --cr-bg-dark: #0e1824;
   --cr-bg-blue: #1c3a63;
   --cr-panel-bg: #264065;
@@ -16,7 +25,18 @@
   --cr-purple-glow: #d845ff;
   --cr-yellow-glow: #ffd700;
 
-  --font-stack: "Arial Black", "Impact", sans-serif;
+  /* Global Clean Font */
+  --font-stack: 'Inter',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  --font-cr: "Arial Black",
+    "Impact",
+    sans-serif;
+  /* Keep original font for Clash components */
 }
 
 body {
@@ -27,7 +47,8 @@ body {
 
   /* Global Dark Background matching the ClashBackground */
   background: radial-gradient(circle at 50% 50%, var(--cr-bg-blue) 0%, var(--cr-bg-dark) 100%);
-  background-attachment: fixed; /* Keeps background still while scrolling */
+  background-attachment: fixed;
+  /* Keeps background still while scrolling */
   color: var(--cr-text-color);
   min-height: 100vh;
 }
@@ -40,14 +61,17 @@ code {
 ::-webkit-scrollbar {
   width: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background: #0e1824;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #3b5585;
   border-radius: 5px;
   border: 1px solid #000;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #5d9afc;
 }

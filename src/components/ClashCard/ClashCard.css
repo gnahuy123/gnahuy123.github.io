@@ -39,7 +39,7 @@
     max-width: 414px;
     background: linear-gradient(180deg, #2b1d42 0%, #1c3a63 40%, #1c3a63 100%);
     position: relative;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     padding-bottom: 80px;
     pointer-events: auto;
 
@@ -200,7 +200,7 @@
     transform: translateX(-50%);
     display: flex;
     gap: 5px;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     padding: 5px 10px;
     border-radius: 10px;
 }
@@ -311,7 +311,7 @@
 .clash-card-wrapper .nav-item.active {
     opacity: 1;
     transform: scale(1.1);
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 5px;
 }
@@ -319,7 +319,7 @@
 .clash-card-wrapper .nav-item img {
     width: 32px;
     height: 32px;
-    filter: drop-shadow(0 2px 0 rgba(0,0,0,0.5));
+    filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.5));
 }
 
 /* --- Visual FX --- */
@@ -344,7 +344,8 @@
 /* Added Experience Border */
 .clash-card-wrapper .card-art-container.experience-border {
     box-shadow: 0 0 10px 2px var(--cr-blue-glow), inset 0 0 10px var(--cr-blue-glow);
-    border: 3px solid #cce5ff; /* Light blue border */
+    border: 3px solid #cce5ff;
+    /* Light blue border */
 }
 
 .clash-card-wrapper .card-art-container.project-border {
@@ -403,4 +404,26 @@
 .clash-card-wrapper .resource-value {
     font-size: 0.9rem;
     color: #fff;
+}
+
+/* Animation for resource update */
+@keyframes pulse-gold {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px 5px rgba(255, 215, 0, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+    }
+}
+
+.pulse-animation {
+    animation: pulse-gold 0.3s ease-out;
 }

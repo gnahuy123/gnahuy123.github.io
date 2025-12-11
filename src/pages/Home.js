@@ -4,6 +4,7 @@ import projectData from '../data/projectData';
 import personData from "../data/personData";
 import experienceData from "../data/experienceData";
 import ClashGame from "../components/ClashCard/ClashGame";
+import SlotMachine from "../components/games/SlotMachine";
 
 const Home = () => {
     const blogs = blogData.map(post => ({
@@ -27,7 +28,8 @@ const Home = () => {
 
     return (
         <div>
-            <ClashGame data={data}/>
+            <ClashGame data={data} />
+            <SlotMachine />
         </div>
     );
 };
