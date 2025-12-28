@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Page.css';
 import experienceData from '../data/experienceData';
 
@@ -8,6 +8,10 @@ const Experience = () => {
         if (!date) return 'Present';
         return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
     };
+
+    useEffect(() => {
+        experienceData.sort((a, b) => a.start_time - b.start_time);
+    }, []);
 
     return (
         <div className="page">
@@ -30,7 +34,7 @@ const Experience = () => {
                             <h2 style={{ marginTop: 0, marginBottom: '0.5rem' }}>{exp.role}</h2>
                             <h3 style={{ color: '#8ba3c7', marginTop: 0 }}>{exp.company}</h3>
                             <p style={{ color: '#ffd700', fontStyle: 'italic', fontSize: '0.9rem', marginBottom: '1rem' }}>
-                                {formatDate(exp.start_time)} - {formatDate(exp.end_time)}
+                                {formatDate(exp.start_time)} - {formatDate(exp.end_time) || 'Present'}
                             </p>
                             <p>{exp.description}</p>
                         </div>

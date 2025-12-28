@@ -11,7 +11,7 @@ const experienceData = [
         company: "ECICS Pte Limited",
         description: "",
         start_time: new Date('2026-01-05'),
-        end_time: new Date()
+        end_time: null
 
     }
 ]
