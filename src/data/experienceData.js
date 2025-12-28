@@ -1,10 +1,11 @@
 const experienceData = [
     {
-        role: "Teaching Assistant ",
-        company: "NUS, CS1101S programming methodology",
-        description: "I taught a group of 6 students, prepared material and marked assignments",
+        role: "Teaching Assistant",
+        company: "NUS, CS1101S Programming Methodology",
+        description: "I taught a group of 6 students, prepared material and marked assignments.",
         start_time: new Date('2025-08-01'),
-        end_time: new Date('2025-11-05')
+        end_time: new Date('2025-11-05'),
+        link: '/blog/about-teaching'
     },
     {
         role: "Full Stack Developer Intern",
@@ -12,8 +13,7 @@ const experienceData = [
         description: "",
         start_time: new Date('2026-01-05'),
         end_time: null
-
     }
-]
+];
 
-export default experienceData
+export default experienceData;

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Page.css';
 import experienceData from '../data/experienceData';
 
@@ -37,6 +38,11 @@ const Experience = () => {
                                 {formatDate(exp.start_time)} - {formatDate(exp.end_time) || 'Present'}
                             </p>
                             <p>{exp.description}</p>
+                            {exp.link && (
+                                <Link to={exp.link} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+                                    Read more →
+                                </Link>
+                            )}
                         </div>
                     ))}
                 </div>
