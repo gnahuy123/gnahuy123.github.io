@@ -1,121 +1,95 @@
+/* ============================================
+   Sidebar - Simple Theme
+   ============================================ */
+
 .sidebar {
-    width: 220px;
-    height: calc(100vh - 70px);
+    width: 200px;
+    height: calc(100vh - 60px);
     position: fixed;
     left: 0;
-    top: 70px;
-
-    /* Modern Glass Sidebar */
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    border-right: var(--glass-border);
-
-    padding: 1.5rem 1rem;
+    top: 60px;
+    background: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    padding: var(--space-6) var(--space-4);
     display: flex;
     flex-direction: column;
     z-index: 900;
-    transition: width 0.3s ease;
-    overflow-x: hidden;
-    pointer-events: auto;
-    /* Enable clicking */
+    overflow-y: auto;
 }
 
 .sidebar.collapsed {
-    width: 60px;
-    padding: 1.5rem 0.5rem;
-    align-items: center;
+    width: 50px;
+    padding: var(--space-6) var(--space-2);
 }
 
 .sidebar-toggle {
     background: none;
     border: none;
-    color: var(--text-primary);
-    font-size: 1.5rem;
+    color: var(--text-secondary);
+    font-size: 1.25rem;
     cursor: pointer;
     align-self: flex-end;
-    margin-bottom: 1rem;
-    padding: 0 0.5rem;
-    transition: transform 0.2s;
+    margin-bottom: var(--space-4);
+    padding: var(--space-1);
 }
 
 .sidebar-toggle:hover {
-    transform: scale(1.1);
-    color: var(--cr-blue-glow);
+    color: var(--text-primary);
 }
 
 .sidebar-header {
-    margin-bottom: 1.5rem;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
+    margin-bottom: var(--space-6);
 }
 
 .sidebar-header h2 {
     margin: 0;
     color: var(--text-primary);
-    font-size: 1.2rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 700;
-    border-bottom: 1px solid var(--glass-border);
-    padding-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+    font-weight: 600;
 }
 
 .sidebar-nav {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--space-1);
 }
 
-/* Sleek Text Links */
 .sidebar-link {
     color: var(--text-secondary);
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    transition: all 0.2s ease;
-    font-size: 0.95rem;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    /* Left align text */
-}
-
-.sidebar.collapsed .sidebar-link {
-    justify-content: center;
-    padding: 0.5rem;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.1);
+    padding: var(--space-2) var(--space-3);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: all 0.2s;
 }
 
 .sidebar-link:hover {
     color: var(--text-primary);
-    background-color: rgba(255, 255, 255, 0.05);
-    /* Very subtle hover */
+    background: var(--bg-card);
 }
 
 .sidebar-link.active {
-    color: var(--cr-blue-glow);
-    /* Highlight text color only */
-    background-color: rgba(var(--cr-blue-glow), 0.1);
-    /* Optional super subtle active bg */
-    font-weight: 600;
-    border-left: 2px solid var(--cr-blue-glow);
-    /* Minimal active indicator */
-    border-radius: 0 6px 6px 0;
-    /* Flat left side */
+    color: var(--text-primary);
+    background: var(--bg-card);
+    font-weight: 500;
 }
 
-.sidebar.collapsed .sidebar-link.active {
-    border-left: none;
-    border: 2px solid var(--cr-blue-glow);
-    border-radius: 50%;
+.sidebar.collapsed .sidebar-link {
+    padding: var(--space-2);
+    text-align: center;
 }
 
 .link-text {
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Responsive - hide sidebar on mobile */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
 }

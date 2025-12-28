@@ -2,8 +2,6 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../logo.svg';
-import ResourceDisplay from './ResourceDisplay';
-import { useAppContext } from '../context/AppContext';
 
 const Navbar = () => {
     return (
@@ -13,15 +11,12 @@ const Navbar = () => {
                     <img src={logo} alt="Logo" />
                 </Link>
 
-                {/* Use the abstract component */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <ResourceDisplay />
-                    <MuteButton />
-                </div>
-
                 <div className="navbar-links">
-                    <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+                    <NavLink to="/" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"} end>
                         Home
+                    </NavLink>
+                    <NavLink to="/modules" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+                        Modules
                     </NavLink>
                     <NavLink to="/blog" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
                         Blog
@@ -33,33 +28,15 @@ const Navbar = () => {
                         Experience
                     </NavLink>
                     <NavLink to="/contact" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-                        Contact Me
+                        Contact
+                    </NavLink>
+                    <NavLink to="/funzone" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
+                        Fun Zone
                     </NavLink>
                 </div>
             </div>
         </nav>
     );
 };
-
-const MuteButton = () => {
-    const { isMuted, toggleMute } = useAppContext();
-    return (
-        <button
-            onClick={toggleMute}
-            className="mute-button"
-            style={{
-                background: 'none',
-                border: 'none',
-                cursor: 'pointer',
-                fontSize: '1.5rem',
-                padding: '0 0.5rem',
-                color: 'white'
-            }}
-            title={isMuted ? "Unmute Sounds" : "Mute Sounds"}
-        >
-            {isMuted ? "🔇" : "🔊"}
-        </button>
-    );
-}
 
 export default Navbar;

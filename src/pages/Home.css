@@ -1,0 +1,203 @@
+/* ============================================
+   Home - Scroll Layout
+   ============================================ */
+
+.home-scroll {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-12) var(--space-4);
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-4);
+}
+
+.hero-section p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto var(--space-4);
+}
+
+.scroll-hint {
+    margin-top: var(--space-8);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+/* Scroll Sections */
+.scroll-section {
+    padding: var(--space-12) var(--space-4);
+    border-top: 1px solid var(--border-color);
+}
+
+.scroll-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-6);
+    color: var(--text-primary);
+}
+
+.section-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.section-link {
+    display: inline-block;
+    margin-top: var(--space-6);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.section-link:hover {
+    color: var(--text-primary);
+}
+
+/* Item Cards */
+.item-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: var(--space-5);
+    border-radius: 4px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: border-color 0.2s;
+}
+
+.item-card.clickable:hover {
+    border-color: var(--text-muted);
+}
+
+.item-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-2);
+    color: var(--text-primary);
+}
+
+.item-card p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.item-subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: var(--space-3);
+}
+
+.item-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Compact items for modules */
+.item-card.compact {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-3) var(--space-4);
+}
+
+.module-code {
+    font-weight: 600;
+    color: var(--text-primary);
+    min-width: 80px;
+}
+
+.module-name {
+    flex: 1;
+    color: var(--text-secondary);
+}
+
+.module-grade {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.module-group {
+    margin-bottom: var(--space-6);
+}
+
+.module-group h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-bottom: var(--space-3);
+}
+
+/* Fun Zone CTA */
+.funzone-cta {
+    padding: var(--space-12) var(--space-4);
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.funzone-cta a {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.funzone-cta a:hover {
+    color: var(--text-primary);
+}
+
+/* Loading state */
+.loading {
+    padding: var(--space-8);
+    text-align: center;
+    color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 50vh;
+        padding: var(--space-8) var(--space-4);
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .scroll-section {
+        padding: var(--space-8) var(--space-4);
+    }
+
+    .item-card.compact {
+        flex-wrap: wrap;
+    }
+
+    .module-name {
+        width: 100%;
+        order: 3;
+        margin-top: var(--space-1);
+    }
+}

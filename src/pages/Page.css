@@ -1,204 +1,168 @@
+/* ============================================
+   Page Container - Simple Theme
+   ============================================ */
+
 .page {
     width: 100%;
-    max-width: 900px;
+    max-width: 700px;
     margin: 0 auto;
-
-    /* Modern Glass Card */
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: var(--glass-border);
-    box-shadow: var(--glass-shadow);
-
-    padding: 3rem;
-    border-radius: 24px;
+    padding: var(--space-8);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
     color: var(--text-primary);
-    position: relative;
-    box-sizing: border-box;
     pointer-events: auto;
 }
 
 .page-header {
-    text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
+    margin-bottom: var(--space-8);
+    padding-bottom: var(--space-6);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .page-header h1 {
-    font-size: 2.5rem;
-    margin: 0;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    font-weight: 600;
 }
 
 .page section {
-    margin-bottom: 2rem;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 2rem;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: var(--space-8);
 }
 
 .page h2 {
     font-size: 1.5rem;
-    color: var(--text-primary);
-    border-bottom: none;
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-4);
     font-weight: 600;
 }
 
 .page h3 {
-    font-size: 1.2rem;
-    color: var(--cr-blue-glow);
-    /* Keep accent color */
-    margin-top: 1.5rem;
-    font-weight: 500;
+    font-size: 1.1rem;
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-3);
+    font-weight: 600;
+    color: var(--text-secondary);
 }
 
 .page p,
 .page ul {
     line-height: 1.7;
-    font-size: 1.05rem;
     color: var(--text-secondary);
 }
 
 .page ul {
-    padding-left: 20px;
-    list-style-type: disc;
+    padding-left: 1.5rem;
 }
 
 .page li {
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-2);
 }
 
 .page a {
-    color: var(--cr-blue-glow);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
-}
-
-.page a:hover {
-    color: #fff;
-    text-shadow: 0 0 10px rgba(93, 154, 252, 0.5);
+    color: var(--text-primary);
 }
 
 .page-image {
     max-width: 100%;
     height: auto;
-    border-radius: 12px;
-    margin: 1.5rem 0;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-}
-
-.profile-pic {
-    max-width: 200px;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto 2rem;
-    border: 4px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-}
-
-.highlight {
-    background-color: rgba(255, 215, 0, 0.1);
-    border-left: 3px solid var(--cr-yellow-glow);
-    padding: 1rem 1.5rem;
-    margin: 1.5rem 0;
-    border-radius: 0 8px 8px 0;
-    color: #fff;
+    border-radius: 4px;
+    margin: var(--space-6) 0;
+    border: 1px solid var(--border-color);
 }
 
 .figure-caption {
     text-align: center;
     font-style: italic;
-    color: var(--text-secondary);
-    margin-top: 12px;
-    font-size: 0.9em;
+    color: var(--text-muted);
+    margin-top: var(--space-2);
+    font-size: 0.9rem;
 }
 
-/* Blog list items styling */
+/* Blog/Module List */
 .blog-list {
     list-style: none;
     padding: 0;
-    display: grid;
-    gap: 1rem;
+    margin: 0;
+}
+
+.blog-list li {
+    margin-bottom: var(--space-2);
 }
 
 .blog-list li a {
     display: block;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.03);
+    padding: var(--space-4);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
     color: var(--text-primary);
     text-decoration: none;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.2s ease;
-    font-weight: 600;
-    font-size: 1.1rem;
+    transition: background 0.2s;
 }
 
 .blog-list li a:hover {
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    background: var(--bg-card);
 }
 
-.blog-list li a:active {
-    transform: scale(0.98);
-}
-
-/* Featured Post Styles */
+/* Featured Post */
 .featured-post {
-    background: rgba(var(--cr-yellow-glow), 0.1);
-    border: 1px solid var(--cr-yellow-glow);
-    padding: 1.5rem;
-    border-radius: 16px;
-    margin-bottom: 2rem;
-    position: relative;
-    overflow: hidden;
+    padding: var(--space-5);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-bottom: var(--space-6);
 }
 
 .featured-post h3 {
-    margin-top: 0;
-    color: var(--cr-yellow-glow);
-    font-size: 1rem;
+    margin: 0 0 var(--space-3);
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
 }
 
 .featured-link {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-weight: 600;
     color: var(--text-primary);
     text-decoration: none;
-    margin-top: 0.5rem;
 }
 
 .featured-link:hover {
-    color: #fff;
-    text-shadow: 0 0 10px var(--cr-yellow-glow);
+    text-decoration: underline;
 }
 
 .post-date {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
     font-weight: 400;
-    color: var(--text-secondary);
 }
 
 .recent-header {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: var(--text-secondary);
-    border-bottom: 1px solid var(--glass-border);
-    padding-bottom: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: var(--space-4);
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.highlight {
+    background: var(--bg-secondary);
+    border-left: 3px solid var(--text-primary);
+    padding: var(--space-4);
+    margin: var(--space-6) 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page {
+        padding: var(--space-5);
+        margin: 0 var(--space-3);
+        border-radius: 4px;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
 }

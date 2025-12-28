@@ -9,8 +9,8 @@ const experienceData = [
     {
         role: "Full Stack Developer Intern",
         company: "ECICS Pte Limited",
-        description: "I did a part-time internship with school concurrently",
-        start_time: new Date('2025-08-01'),
+        description: "",
+        start_time: new Date('2026-01-05'),
         end_time: new Date()
 
     }

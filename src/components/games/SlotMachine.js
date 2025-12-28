@@ -1,8 +1,6 @@
 // SlotMachine.jsx
 import React, { useState, useEffect } from "react";
 import "./SlotMachine.css";
-import { useAppContext } from "../../context/AppContext";
-import coin from "../../assets/images/coin.png";
 import funFactData from "../../data/funFactData.js";
 
 const symbols = ["🐗", "👨🏿", "🔨"];
@@ -16,7 +14,7 @@ export default function SlotMachine() {
     const [spinning, setSpinning] = useState(false);
     const [message, setMessage] = useState("Click SPIN to play!");
     const [messageSeverity, setMessageSeverity] = useState("neutral");
-    const { coins, setCoins, triggerGameEvent } = useAppContext();
+
     const [unlockedFacts, setUnlockedFacts] = useState([]);
 
     //Randomly sorts the fun facts
@@ -24,19 +22,10 @@ export default function SlotMachine() {
         funFactData.sort(() => Math.random() - 0.5);
     }, [])
 
-    const handleCost = () => {
-        if (coins < 1) {
-            setMessage("Not enough coins!");
-            setMessageSeverity("failure");
-            return false;
-        };
-        setCoins(coins - 1);
-        return true;
-    }
 
     const handleSpin = () => {
         if (spinning) return;
-        if (!handleCost()) return;
+
         setSpinning(true);
         setMessage("Spinning...");
         setMessageSeverity("neutral");
@@ -70,7 +59,7 @@ export default function SlotMachine() {
             }
 
             setMessageSeverity(isWin ? "success" : "neutral");
-            triggerGameEvent(isWin ? 'win' : 'lose');
+
             setSpinning(false);
         }, 700);
     };
@@ -89,9 +78,6 @@ export default function SlotMachine() {
                 </div>
 
                 <div className="lever-container" onClick={!spinning ? handleSpin : undefined}>
-                    <div className="cost-label">
-                        1 <img src={coin} alt="coin" className="cost-icon" />
-                    </div>
                     <div className="lever-base"></div>
                     <div className={`lever-arm ${spinning ? "lever-arm--pulled" : ""}`}>
                         <div className="lever-stick"></div>
