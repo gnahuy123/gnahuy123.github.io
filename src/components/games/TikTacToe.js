@@ -38,9 +38,9 @@ const TikTacToe = () => {
             }, 500);
             return () => clearTimeout(timer);
         }
-    }, [squares, xIsNext, calculateWinner]);
+    }, [squares, xIsNext, calculateWinner, handleComputerMove]);
 
-    const handleComputerMove = () => {
+    const handleComputerMove = useCallback(() => {
         // Only call if TikTacToeCPU is actually defined and is a function
         if (typeof TikTacToeCPU === 'function') {
             try {
@@ -55,7 +55,7 @@ const TikTacToe = () => {
                 console.error("Error in TikTacToeCPU:", error);
             }
         }
-    };
+    }, [squares]);
 
     const handleClick = (i) => {
         if (winner || squares[i] || !xIsNext) return;
