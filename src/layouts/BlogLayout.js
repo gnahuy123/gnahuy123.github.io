@@ -3,7 +3,6 @@ import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 import blogData from '../data/blogData';
-import PostNavigation from '../components/PostNavigation';
 
 const BlogLayout = () => {
     return (
@@ -13,11 +12,10 @@ const BlogLayout = () => {
                 <Sidebar title="Blog" items={blogData} basePath="/blog" />
                 <main className="content">
                     <Outlet />
-                    <PostNavigation />
                 </main>
             </div>
         </>
     );
 };
 
-export default BlogLayout;;
+export default BlogLayout;
