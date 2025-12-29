@@ -1,5 +1,6 @@
 import React from 'react';
 import SlotMachine from '../components/games/SlotMachine';
+import TikTacToe from '../components/games/TikTacToe';
 import './Page.css';
 
 const FunZone = () => {
@@ -10,7 +11,7 @@ const FunZone = () => {
             </header>
 
             <section>
-                <p>Take a break and have some fun! Pull the lever to win prizes.</p>
+                <p>Take a break and have some fun!</p>
 
                 <div style={{
                     display: 'flex',
@@ -18,6 +19,14 @@ const FunZone = () => {
                     marginTop: 'var(--space-8)'
                 }}>
                     <SlotMachine />
+                </div>
+
+                <div style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    marginTop: 'var(--space-8)'
+                }}>
+                    <TikTacToe />
                 </div>
             </section>
         </div>

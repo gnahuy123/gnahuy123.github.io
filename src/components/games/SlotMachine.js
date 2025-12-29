@@ -67,7 +67,7 @@ export default function SlotMachine() {
     return (
         <div className="slot-machine">
             <div className="slot-machine-header">Fun Fact Slot Machine</div>
-            <div className="slot-machine-description">Collect coins then spin the reels to reveal a fun fact about me!</div>
+            <div className="slot-machine-description">Spin the reels to reveal a fun fact about me!</div>
             <div className="machine-interface">
                 <div className={`reels ${spinning ? "reels--spinning" : ""}`}>
                     {reels.map((symbol, i) => (

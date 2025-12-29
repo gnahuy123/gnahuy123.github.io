@@ -75,7 +75,7 @@ const AboutTeaching = () => {
                 <p>Therefore, I created a "mini contest" with some stakes to add stress and recreate a competition vibe. To be honest, I wanted to organise something like this as I watched a competitive programming competition, but I do believe it also matched the objectives of the lesson.</p>
 
                 <h3>Lesson 10</h3>
-                <p>We finished a very short studio sheet and I treated them to dinner as I got paid too much and also to bribe them for a better teaching feedback score 😄</p>
+                <p>We finished a very short studio sheet and I treated my students to dinner as I got paid too much and also to bribe them for a better teaching feedback score 😄</p>
             </section>
 
             <section>

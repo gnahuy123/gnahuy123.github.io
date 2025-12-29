@@ -28,7 +28,7 @@ const ExperienceSection = () => {
                         <h3>{exp.role}</h3>
                         <p className="item-subtitle">{exp.company}</p>
                         <p>{exp.description}</p>
-                        <Link to={exp.link} className="item-link">Read more →</Link>
+                        {exp.link && <Link to={exp.link} className="item-link">Read more →</Link>}
                     </div>
                 ))}
             </div>
