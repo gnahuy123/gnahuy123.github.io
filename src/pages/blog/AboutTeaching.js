@@ -1,7 +1,16 @@
 import React from 'react';
 import '../Page.css';
+import yuhangcontest from '../../assets/images/yuhangcontest.png';
+import finalLessonImg1 from '../../assets/images/final_lesson_picture.jpg';
+import finalLessonImg2 from '../../assets/images/final_lesson_picture2.jpg';
+import Slideshow from '../../components/Slideshow';
 
 const AboutTeaching = () => {
+    const slideshowImages = [
+        { src: finalLessonImg1, caption: "Final Lesson Picture 1" },
+        { src: finalLessonImg2, caption: "Final Lesson Picture 2" }
+    ];
+
     return (
         <div className="page">
             <header className="page-header">
@@ -74,6 +83,9 @@ const AboutTeaching = () => {
                 <p>This tutorial was leading up to the practical exam. One thing I struggled with during mine was that I had no trouble working on the practices, but the stress during the exam made me panic and freeze.</p>
                 <p>Therefore, I created a "mini contest" with some stakes to add stress and recreate a competition vibe. To be honest, I wanted to organise something like this as I watched a competitive programming competition, but I do believe it also matched the objectives of the lesson.</p>
 
+                <img src={yuhangcontest} alt="Yuhang Contest" />
+                <figcaption>Figure 1: The rules I set for the mini contest</figcaption>
+
                 <h3>Lesson 10</h3>
                 <p>We finished a very short studio sheet and I treated my students to dinner as I got paid too much and also to bribe them for a better teaching feedback score 😄</p>
             </section>
@@ -96,6 +108,10 @@ const AboutTeaching = () => {
                 <h2>Future</h2>
                 <p>My views on teaching definitely changed — from just being a bullet point on my resume to a valuable experience.</p>
                 <p>Will I TA again? Probably for CS1101S, but maybe not for higher-level modules. Whilst immensely rewarding, I feel like teaching is not really something that aligns with my future career goals. Other modules would require me to re-learn content and create new material, whilst for CS1101S I already have those covered.</p>
+            </section>
+
+            <section>
+                <Slideshow images={slideshowImages} />
             </section>
         </div>
     );
