@@ -27,19 +27,6 @@ const TikTacToe = () => {
         return squares.includes(null) ? null : "Draw";
     }, []);
 
-    useEffect(() => {
-        const result = calculateWinner(squares);
-        if (result) {
-            setWinner(result);
-        } else if (!xIsNext) {
-            // Computer's turn (O)
-            const timer = setTimeout(() => {
-                handleComputerMove();
-            }, 500);
-            return () => clearTimeout(timer);
-        }
-    }, [squares, xIsNext, calculateWinner, handleComputerMove]);
-
     const handleComputerMove = useCallback(() => {
         // Only call if TikTacToeCPU is actually defined and is a function
         if (typeof TikTacToeCPU === 'function') {
@@ -56,6 +43,19 @@ const TikTacToe = () => {
             }
         }
     }, [squares]);
+
+    useEffect(() => {
+        const result = calculateWinner(squares);
+        if (result) {
+            setWinner(result);
+        } else if (!xIsNext) {
+            // Computer's turn (O)
+            const timer = setTimeout(() => {
+                handleComputerMove();
+            }, 500);
+            return () => clearTimeout(timer);
+        }
+    }, [squares, xIsNext, calculateWinner, handleComputerMove]);
 
     const handleClick = (i) => {
         if (winner || squares[i] || !xIsNext) return;
