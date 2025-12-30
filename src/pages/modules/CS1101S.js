@@ -1,5 +1,5 @@
 import React from 'react';
-import linkedlistImg from '../../assets/images/linkedlistCS50.png';
+import linkedlistImg from '../../assets/images/blog/linkedlistCS50.png';
 import '../Page.css';
 
 const CS1101S = () => {
