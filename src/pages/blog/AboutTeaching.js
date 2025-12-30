@@ -28,7 +28,7 @@ const AboutTeaching = () => {
 
             <section>
                 <h2>How I Got the Role</h2>
-                <p>Firstly, I got A+ for the module, then filled in a Google form and went for an interview. The interview went half bad, but I showed enthusiasm and passion for not only Computer Science but also Teaching. When I got the offer, I was very happy.</p>
+                <p>Firstly, I got A+ for the module, then filled in a Google form and went for an interview. The interview went half good, and I showed enthusiasm and passion for not only Computer Science but also Teaching. When I got the offer, I was very happy.</p>
             </section>
 
             <section>
