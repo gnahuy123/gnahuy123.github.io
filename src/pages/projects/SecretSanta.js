@@ -21,6 +21,15 @@ const SecretSanta = () => {
                         A festive web application to organize Secret Santa events seamlessly.
                         Add clarity to your holiday exchanges with automated pairing and wishlists.
                     </p>
+                    <p>
+                        🎲 Randomized Algorithms: Fair and unbiased matching ensures no one gets themselves, every time.
+                        🎉 Cool & Festive Reveals: Ditch the boring emails. Reveal matches with Slot Machines, Scratch Cards, or Confetti pops!
+                        ⚡ Free & Lightweight: No sign-ups, no tracking icons, no heavy downloads. Just a URL.
+                        📱 Native Share Compatible: Works seamlessly with your phone's native sharing sheet for WhatsApp, Telegram, or iMessage.
+                    </p>
+                    <p>
+                        Built with React and Supabase.
+                    </p>
 
                     <div className="image-container" style={{ margin: '2rem 0', textAlign: 'center' }}>
                         <img
