@@ -1,5 +1,5 @@
 import React from 'react';
-import perfImg from '../../assets/images/CS2040s-perf.jpg';
+import perfImg from '../../assets/images/modules/CS2040s-perf.jpg';
 import '../Page.css';
 
 const CS2040S = () => {

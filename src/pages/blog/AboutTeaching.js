@@ -1,8 +1,8 @@
 import React from 'react';
 import '../Page.css';
-import yuhangcontest from '../../assets/images/yuhangcontest.png';
-import finalLessonImg1 from '../../assets/images/final_lesson_picture.jpg';
-import finalLessonImg2 from '../../assets/images/final_lesson_picture2.jpg';
+import yuhangcontest from '../../assets/images/blog/yuhangcontest.png';
+import finalLessonImg1 from '../../assets/images/blog/final_lesson_picture.jpg';
+import finalLessonImg2 from '../../assets/images/blog/final_lesson_picture2.jpg';
 import Slideshow from '../../components/Slideshow';
 
 const AboutTeaching = () => {

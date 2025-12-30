@@ -1,5 +1,5 @@
 import React from 'react';
-import ballsImg from '../../assets/images/balls.jpg';
+import ballsImg from '../../assets/images/modules/balls.jpg';
 import '../Page.css';
 
 const CS1231S = () => {

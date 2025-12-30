@@ -1,9 +1,18 @@
 import NoteIt from '../pages/projects/NoteIt';
 import TaskManager from '../pages/projects/TaskManager';
 import LiftSim from '../pages/projects/LiftSim';
+import SecretSanta from '../pages/projects/SecretSanta';
 //Order by what you want to show first
 
 const projectData = [
+    {
+        name: 'Secret Santa Sparkle',
+        description: 'A festive web application to organize Secret Santa events with automated pairing and wishlists.',
+        path: 'secret-santa',
+        component: SecretSanta,
+        url: 'https://secret-santa-sparkle-three.vercel.app/',
+        date: new Date('2024-12-25'),
+    },
     {
         name: 'NoteIt',
         description: 'A full-stack academic support web application for NUS students to share notes and ask questions.',
@@ -22,12 +31,13 @@ const projectData = [
     },
     {
         name: 'Lift Simulation',
-        description: 'Have you ever wondered why lifts are so slow? This is a simulation of different lift algorithms and comparisons of their performance.',
+        description: 'View and compare the performance of different lift algorithms.',
         path: 'lift-simulation',
         component: LiftSim,
-        url: 'https://github.com/gnahuy123/liftSim',
-        date: new Date('2023-12-01'), // Added date for sorting
+        url: 'https://liftsim.onrender.com/',
+        date: new Date('2024-01-12'), // Added date for sorting
     },
+
 ];
 
 export default projectData;

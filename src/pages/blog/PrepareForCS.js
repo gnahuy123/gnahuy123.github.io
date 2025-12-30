@@ -1,6 +1,6 @@
 import React from 'react';
-import cs50Img from '../../assets/images/CS50.jpg';
-import neetcodeImg from '../../assets/images/neetcode.png';
+import cs50Img from '../../assets/images/blog/CS50.jpg';
+import neetcodeImg from '../../assets/images/blog/neetcode.png';
 import '../Page.css';
 
 const PrepareForCS = () => {
@@ -62,14 +62,14 @@ const PrepareForCS = () => {
                 <pre>
                     <code>
                         Find the maximum point of f(x) = x^2 + 2x + 1
-                        <br/><br/>
+                        <br /><br />
                         From what I remember, we just needed to follow the steps:
-                        <br/>
-                         - Differentiate f(x)
-                        <br/>
-                         - Solve f'(x) = 0
-                        <br/>
-                         - Use the first or second derivative test to check if it's a max/min
+                        <br />
+                        - Differentiate f(x)
+                        <br />
+                        - Solve f'(x) = 0
+                        <br />
+                        - Use the first or second derivative test to check if it's a max/min
                     </code>
                 </pre>
                 <p>
@@ -79,15 +79,15 @@ const PrepareForCS = () => {
                 <pre>
                     <code>
                         Create a function that takes an integer and prints a pyramid like this:
-                        <br/>
+                        <br />
                         For n = 4
-                        <br/><br/>
-                           #  #
-                        <br/>
-                          ##  ##
-                        <br/>
-                         ###  ###
-                        <br/>
+                        <br /><br />
+                        #  #
+                        <br />
+                        ##  ##
+                        <br />
+                        ###  ###
+                        <br />
                         ####  ####
                     </code>
                 </pre>

@@ -1,5 +1,5 @@
 import React from 'react';
-import passTestcaseImg from '../../assets/images/CS2030s-passTestcase.jpg';
+import passTestcaseImg from '../../assets/images/modules/CS2030s-passTestcase.jpg';
 import '../Page.css';
 
 const CS2030S = () => {

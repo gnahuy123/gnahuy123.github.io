@@ -1,5 +1,5 @@
 import React from 'react';
-import svdImg from '../../assets/images/svd.png';
+import svdImg from '../../assets/images/modules/svd.png';
 import '../Page.css';
 
 const MA1522 = () => {
