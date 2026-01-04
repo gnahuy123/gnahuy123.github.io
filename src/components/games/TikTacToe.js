@@ -88,7 +88,7 @@ const TikTacToe = () => {
     return (
         <div className="tik-tac-toe">
             <div className="tik-tac-toe-header">Tic Tac Toe</div>
-            <div className="tik-tac-toe-description">Beat the CPU to get a embarrasing fact about me!</div>
+            <div className="tik-tac-toe-description">Beat the CPU to get a embarrassing fact about me!</div>
 
             <div className="board">
                 <div className="row">
