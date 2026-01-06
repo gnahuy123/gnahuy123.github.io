@@ -11,7 +11,7 @@ const projectData = [
         path: 'secret-santa',
         component: SecretSanta,
         url: 'https://secret-santa-sparkle-three.vercel.app/',
-        date: new Date('2024-12-25'),
+        date: new Date('2025-12-25'),
     },
     {
         name: 'NoteIt',
