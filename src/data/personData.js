@@ -1,7 +1,7 @@
 const personData = {
     name: "Tan Yu Hang",
     email: "mailto:tanyuhang.tyh.tyh@gmail.com",
-    linkedin: "https://www.linkedin.com/in/tan-yu-hang-350189363/",
+    linkedin: "https://www.linkedin.com/in/tan-yu-hang/",
     github: "https://www.github.com/gnahuy123",
     description:
         ` Hi there! I'm Yu Hang, studying Computer Science at NUS graduating in Dec 2027,
