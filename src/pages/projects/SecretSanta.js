@@ -11,9 +11,9 @@ const SecretSanta = () => {
             </header>
             <section>
                 <div className="project-links">
-                    <a href="https://gnahuy123.github.io/secret-santa-sparkle/" target="_blank" rel="noopener noreferrer" className="download-button">User Guide</a>
-                    <a href="https://github.com/gnahuy123/secret-santa-sparkle" target="_blank" rel="noopener noreferrer" className="download-button">GitHub</a>
-                    <a href="https://secret-santa-sparkle-three.vercel.app/" target="_blank" rel="noopener noreferrer" className="download-button">Live Demo</a>
+                    <a href="https://gnahuy123.github.io/secret-santa-sparkle/" target="_blank" rel="noopener noreferrer" className="project-link-btn">📖 User Guide</a>
+                    <a href="https://github.com/gnahuy123/secret-santa-sparkle" target="_blank" rel="noopener noreferrer" className="project-link-btn">🐙 GitHub</a>
+                    <a href="https://secret-santa-sparkle-three.vercel.app/" target="_blank" rel="noopener noreferrer" className="project-link-btn">🚀 Live Demo</a>
                 </div>
 
                 <div className="project-content" style={{ marginTop: '2rem' }}>
