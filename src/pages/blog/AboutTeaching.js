@@ -86,8 +86,6 @@ const AboutTeaching = () => {
                 <img src={yuhangcontest} alt="Yuhang Contest" />
                 <figcaption>Figure 1: The rules I set for the mini contest</figcaption>
 
-                <h3>Lesson 10</h3>
-                <p>We finished a very short studio sheet and I treated my students to dinner as I got paid too much and also to bribe them for a better teaching feedback score 😄</p>
             </section>
 
             <section>

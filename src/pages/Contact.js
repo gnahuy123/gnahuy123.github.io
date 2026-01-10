@@ -1,7 +1,6 @@
 import React from 'react';
 import './Page.css';
 import './Contact.css';
-import resume from '../assets/files/Yu_Hang_Resume.pdf';
 import personData from '../data/personData.js';
 import { EmailIcon, LinkedInIcon, GitHubIcon, FileIcon } from '../components/Icons';
 
@@ -32,7 +31,7 @@ const Contact = () => {
                     <span>GitHub</span>
                 </a>
 
-                <a href={resume} download="Tan_Yu_Hang_Resume.pdf" className="contact-link">
+                <a href={personData.resume} target="_blank" rel="noopener noreferrer" className="contact-link">
                     <FileIcon width="32" height="32" />
                     <span>Resume</span>
                 </a>

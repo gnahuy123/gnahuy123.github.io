@@ -9,7 +9,8 @@ const LiftSim = () => {
             </header>
             <section>
                 <p>Have you ever wondered why lifts are so slow? This is a simulation of different lift algorithms and comparisons of their performance.</p>
-                <a href="https://github.com/gnahuy123/liftSim" target="_blank" rel="noopener noreferrer" className="download-button">View Project</a>
+                <a href="https://github.com/gnahuy123/liftSim" target="_blank" rel="noopener noreferrer" className="download-button">View Github</a>
+                <a href="https://liftsim.onrender.com/" target="_blank" rel="noopener noreferrer" className="download-button">View Project</a>
             </section>
         </div>
     );
