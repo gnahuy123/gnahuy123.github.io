@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import { AppProvider } from './context/AppContext';
 
@@ -34,10 +34,26 @@ import CS2103T from './pages/modules/CS2103T';
 import CS2102 from './pages/modules/CS2102';
 import ST2334 from './pages/modules/ST2334';
 
+import ReactGA from 'react-ga4';
+
+// Initialize Google Analytics
+ReactGA.initialize("G-SYR16JP9C5");
+
+function Analytics() {
+    const location = useLocation();
+
+    React.useEffect(() => {
+        ReactGA.send({ hitType: "pageview", page: location.pathname + location.search });
+    }, [location]);
+
+    return null;
+}
+
 function App() {
     return (
         <AppProvider>
             <Router>
+                <Analytics />
                 <Routes>
                     {/* Routes with the main layout (Navbar only) */}
                     <Route element={<MainLayout />}>
