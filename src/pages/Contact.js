@@ -2,7 +2,7 @@ import React from 'react';
 import './Page.css';
 import './Contact.css';
 import personData from '../data/personData.js';
-import { EmailIcon, LinkedInIcon, GitHubIcon, FileIcon } from '../components/Icons';
+import { EmailIcon, LinkedInIcon, GitHubIcon } from '../components/Icons';
 
 const Contact = () => {
     return (
@@ -31,10 +31,6 @@ const Contact = () => {
                     <span>GitHub</span>
                 </a>
 
-                <a href={personData.resume} target="_blank" rel="noopener noreferrer" className="contact-link">
-                    <FileIcon width="32" height="32" />
-                    <span>Resume</span>
-                </a>
             </div>
         </div>
     );
