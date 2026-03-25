@@ -6,6 +6,7 @@ import experienceData from '../data/experienceData';
 import projectData from '../data/projectData';
 import moduleData from '../data/moduleData';
 import blogData from '../data/blogData';
+import profilePic from '../assets/images/profilepic.png';
 
 // Section components
 const ExperienceSection = () => {
@@ -130,6 +131,7 @@ const Home = () => {
         <div className="home-scroll">
             {/* Hero Section */}
             <section className="hero-section">
+                <img src={profilePic} alt={personData.name} className="profile-pic" />
                 <h1>Hey, I'm {personData.name}</h1>
                 <p>{personData.description}</p>
                 <p className="scroll-hint">Scroll down to explore ↓</p>

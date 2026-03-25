@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import BackToHome from '../components/BackToHome';
 
 const MainLayout = () => {
     return (
@@ -9,6 +10,7 @@ const MainLayout = () => {
             <div className="app-container">
                 <main className="content">
                     <Outlet />
+                    <BackToHome />
                 </main>
             </div>
         </>
