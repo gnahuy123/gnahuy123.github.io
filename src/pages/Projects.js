@@ -15,21 +15,40 @@ const Projects = () => {
                 <p>Things I've built.</p>
 
                 {sortedProjects.length > 0 ? (
-                    <ul className="blog-list">
+                    <div className="project-list">
                         {sortedProjects.map((project, index) => (
-                            <li key={index}>
-                                <Link to={`/projects/${project.path}`}>
-                                    <strong>{project.name}</strong>
-                                    <span style={{ display: 'block', fontSize: '0.9rem', color: 'var(--text-secondary)', marginTop: 'var(--space-1)' }}>
-                                        {project.description}
-                                    </span>
-                                    <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                            <div key={index} className="project-card">
+                                <div className="project-card-top">
+                                    <Link to={`/projects/${project.path}`} className="project-card-name">
+                                        {project.name}
+                                    </Link>
+                                    <span className="project-card-date">
                                         {project.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
                                     </span>
-                                </Link>
-                            </li>
+                                </div>
+
+                                <p className="project-card-desc">{project.description}</p>
+
+                                {project.techStack && (
+                                    <div className="tech-stack">
+                                        {project.techStack.map((tech, i) => (
+                                            <span key={i} className="tech-badge">{tech}</span>
+                                        ))}
+                                    </div>
+                                )}
+
+                                <div className="project-card-links">
+                                    {project.github && (
+                                        <a href={project.github} target="_blank" rel="noopener noreferrer">GitHub</a>
+                                    )}
+                                    {project.url && (
+                                        <a href={project.url} target="_blank" rel="noopener noreferrer">Live Demo</a>
+                                    )}
+                                    <Link to={`/projects/${project.path}`}>Details →</Link>
+                                </div>
+                            </div>
                         ))}
-                    </ul>
+                    </div>
                 ) : (
                     <p>No projects yet. Check back soon!</p>
                 )}

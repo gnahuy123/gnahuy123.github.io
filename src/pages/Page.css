@@ -197,3 +197,92 @@
     border-color: var(--text-secondary);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
+/* ============================================
+   Project List Cards
+   ============================================ */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-top: var(--space-6);
+}
+
+.project-card {
+    padding: var(--space-5);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    transition: border-color 0.2s;
+}
+
+.project-card:hover {
+    border-color: var(--text-secondary);
+}
+
+.project-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--space-4);
+    margin-bottom: var(--space-2);
+}
+
+.project-card-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.project-card-name:hover {
+    text-decoration: underline;
+}
+
+.project-card-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.project-card-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-3);
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.tech-badge {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-secondary);
+    font-family: monospace;
+}
+
+.project-card-links {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.project-card-links a {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.project-card-links a:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
+}
