@@ -6,12 +6,10 @@ import { AppProvider } from './context/AppContext';
 // Layouts
 import MainLayout from './layouts/MainLayout';
 import BlogLayout from './layouts/BlogLayout';
-import ProjectsLayout from './layouts/ProjectsLayout';
 import ModulesLayout from './layouts/ModulesLayout';
 
 // Pages
 import Home from './pages/Home';
-import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import Experience from './pages/Experience';
@@ -20,7 +18,6 @@ import FunZone from './pages/FunZone';
 
 // Data
 import blogData from './data/blogData';
-import projectData from './data/projectData';
 
 // Module pages
 import CS1101S from './pages/modules/CS1101S';
@@ -90,13 +87,6 @@ function App() {
                         <Route path="CS2106" element={<CS2106 />} />
                     </Route>
 
-                    {/* Routes with the projects layout (Navbar and Sidebar) */}
-                    <Route path="/projects" element={<ProjectsLayout />}>
-                        <Route index element={<Projects />} />
-                        {projectData.map((project, index) => (
-                            <Route key={index} path={project.path} element={<project.component />} />
-                        ))}
-                    </Route>
                 </Routes>
             </Router>
         </AppProvider>

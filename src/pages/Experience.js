@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './Page.css';
 import experienceData from '../data/experienceData';
@@ -10,9 +10,9 @@ const Experience = () => {
         return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
     };
 
-    useEffect(() => {
-        experienceData.sort((a, b) => a.start_time - b.start_time);
-    }, []);
+    const sortedExperience = [...experienceData].sort((a, b) =>
+        new Date(b.start_time) - new Date(a.start_time)
+    );
 
     return (
         <div className="page">
@@ -24,7 +24,7 @@ const Experience = () => {
                 <p>My professional journey, internships, and teaching roles.</p>
 
                 <div className="experience-list">
-                    {experienceData.map((exp, index) => (
+                    {sortedExperience.map((exp, index) => (
                         <div key={index} style={{
                             marginBottom: '2rem',
                             padding: '1.5rem',

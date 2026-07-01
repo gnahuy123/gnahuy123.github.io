@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 import personData from '../data/personData';
 import experienceData from '../data/experienceData';
-import projectData from '../data/projectData';
 import moduleData from '../data/moduleData';
 import blogData from '../data/blogData';
 import profilePic from '../assets/images/profilepic.png';
@@ -25,37 +24,15 @@ const ExperienceSection = () => {
             <div className="section-content">
                 {sortedExp.map((exp, i) => (
                     <div key={i} className="item-card">
-                        <div className="item-date">{formatDate(exp.start_time)} – {formatDate(exp.end_time)}</div>
+                        <div className="item-date">{formatDate(exp.start_time)} - {formatDate(exp.end_time)}</div>
                         <h3>{exp.role}</h3>
                         <p className="item-subtitle">{exp.company}</p>
                         <p>{exp.description}</p>
-                        {exp.link && <Link to={exp.link} className="item-link">Read more →</Link>}
+                        {exp.link && <Link to={exp.link} className="item-link">Read more -&gt;</Link>}
                     </div>
                 ))}
             </div>
-            <Link to="/experience" className="section-link">View full experience →</Link>
-        </section>
-    );
-};
-
-const ProjectsSection = () => {
-    const sortedProjects = [...projectData].sort((a, b) =>
-        new Date(b.date) - new Date(a.date)
-    );
-
-    return (
-        <section id="projects" className="scroll-section">
-            <h2>Projects</h2>
-            <div className="section-content">
-                {sortedProjects.map((project, i) => (
-                    <Link key={i} to={`/projects/${project.path}`} className="item-card clickable">
-                        <h3>{project.name}</h3>
-                        <p>{project.description}</p>
-                        <span className="item-date">{project.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}</span>
-                    </Link>
-                ))}
-            </div>
-            <Link to="/projects" className="section-link">View all projects →</Link>
+            <Link to="/experience" className="section-link">View full experience -&gt;</Link>
         </section>
     );
 };
@@ -87,7 +64,7 @@ const ModulesSection = () => {
                 {renderModuleGroup('Year 1 Semester 2', y1s2)}
                 {renderModuleGroup('Year 1 Semester 1', y1s1)}
             </div>
-            <Link to="/modules" className="section-link">View all modules →</Link>
+            <Link to="/modules" className="section-link">View all modules -&gt;</Link>
         </section>
     );
 };
@@ -108,7 +85,7 @@ const BlogSection = () => {
                     </Link>
                 ))}
             </div>
-            <Link to="/blog" className="section-link">View all posts →</Link>
+            <Link to="/blog" className="section-link">View all posts -&gt;</Link>
         </section>
     );
 };
@@ -121,16 +98,12 @@ const Home = () => {
                 <img src={profilePic} alt={personData.name} className="profile-pic" />
                 <h1>Hey, I'm {personData.name}</h1>
                 <p>{personData.description}</p>
-                <p className="scroll-hint">Scroll down to explore ↓</p>
+                <p className="scroll-hint">Scroll down to explore</p>
             </section>
 
             {/* Dynamically loaded sections */}
             <Suspense fallback={<div className="loading">Loading...</div>}>
                 <ExperienceSection />
-            </Suspense>
-
-            <Suspense fallback={<div className="loading">Loading...</div>}>
-                <ProjectsSection />
             </Suspense>
 
             <Suspense fallback={<div className="loading">Loading...</div>}>
@@ -143,7 +116,7 @@ const Home = () => {
 
             {/* Fun Zone CTA */}
             <section className="funzone-cta">
-                <Link to="/funzone">Visit the Fun Zone →</Link>
+                <Link to="/funzone">Visit the Fun Zone -&gt;</Link>
             </section>
         </div>
     );
