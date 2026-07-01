@@ -1,4 +1,6 @@
-const funFactData = [
+const funFactData = 
+    ["I realised having a fun fact section is really cringe"];
+/**[
     "I've sung in choirs for around 7 years",
     "I have a ATCL diploma in piano performance",
     "I have had a cooking phase, with my cooking idol being Adam raguesia and I also almost burnt down the kitchen once",
@@ -9,5 +11,6 @@ const funFactData = [
     "I watched the chopin piano compeitition and sliently judged the pianists for making small mistakes even though they are world class pianists",
     "I honestly have no interest in learning a 3rd language"
 ];
+**/
 
 export default funFactData;

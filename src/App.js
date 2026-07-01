@@ -33,6 +33,8 @@ import CS2100 from './pages/modules/CS2100';
 import CS2103T from './pages/modules/CS2103T';
 import CS2102 from './pages/modules/CS2102';
 import ST2334 from './pages/modules/ST2334';
+import CS2109S from './pages/modules/CS2109S';
+import CS2106 from './pages/modules/CS2106';
 
 import ReactGA from 'react-ga4';
 
@@ -84,6 +86,8 @@ function App() {
                         <Route path="CS2103T" element={<CS2103T />} />
                         <Route path="CS2102" element={<CS2102 />} />
                         <Route path="ST2334" element={<ST2334 />} />
+                        <Route path="CS2109S" element={<CS2109S />} />
+                        <Route path="CS2106" element={<CS2106 />} />
                     </Route>
 
                     {/* Routes with the projects layout (Navbar and Sidebar) */}

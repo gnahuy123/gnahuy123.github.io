@@ -64,41 +64,28 @@ const ModulesSection = () => {
     const y1s1 = moduleData.filter(m => m.semester === 'Y1S1');
     const y1s2 = moduleData.filter(m => m.semester === 'Y1S2');
     const y2s1 = moduleData.filter(m => m.semester === 'Y2S1');
+    const y2s2 = moduleData.filter(m => m.semester === 'Y2S2');
+    const renderModuleGroup = (title, modules) => (
+        <div className="module-group">
+            <h4>{title}</h4>
+            {modules.map((mod, i) => (
+                <Link key={i} to={`/modules/${mod.code}`} className="item-card clickable compact">
+                    <span className="module-code">{mod.code}</span>
+                    <span className="module-name">{mod.name}</span>
+                    <span className="module-grade">{mod.grade}</span>
+                </Link>
+            ))}
+        </div>
+    );
 
     return (
         <section id="modules" className="scroll-section">
             <h2>Module Reviews</h2>
             <div className="section-content">
-                <div className="module-group">
-                    <h4>Year 1 Semester 1</h4>
-                    {y1s1.map((mod, i) => (
-                        <Link key={i} to={`/modules/${mod.code}`} className="item-card clickable compact">
-                            <span className="module-code">{mod.code}</span>
-                            <span className="module-name">{mod.name}</span>
-                            <span className="module-grade">{mod.grade}</span>
-                        </Link>
-                    ))}
-                </div>
-                <div className="module-group">
-                    <h4>Year 1 Semester 2</h4>
-                    {y1s2.map((mod, i) => (
-                        <Link key={i} to={`/modules/${mod.code}`} className="item-card clickable compact">
-                            <span className="module-code">{mod.code}</span>
-                            <span className="module-name">{mod.name}</span>
-                            <span className="module-grade">{mod.grade}</span>
-                        </Link>
-                    ))}
-                </div>
-                <div className="module-group">
-                    <h4>Year 2 Semester 1</h4>
-                    {y2s1.map((mod, i) => (
-                        <Link key={i} to={`/modules/${mod.code}`} className="item-card clickable compact">
-                            <span className="module-code">{mod.code}</span>
-                            <span className="module-name">{mod.name}</span>
-                            <span className="module-grade">{mod.grade}</span>
-                        </Link>
-                    ))}
-                </div>
+                {renderModuleGroup('Year 2 Semester 2', y2s2)}
+                {renderModuleGroup('Year 2 Semester 1', y2s1)}
+                {renderModuleGroup('Year 1 Semester 2', y1s2)}
+                {renderModuleGroup('Year 1 Semester 1', y1s1)}
             </div>
             <Link to="/modules" className="section-link">View all modules →</Link>
         </section>

@@ -8,6 +8,7 @@ const Modules = () => {
     const y1s1 = moduleData.filter(m => m.semester === 'Y1S1');
     const y1s2 = moduleData.filter(m => m.semester === 'Y1S2');
     const y2s1 = moduleData.filter(m => m.semester === 'Y2S1');
+    const y2s2 = moduleData.filter(m => m.semester === 'Y2S2');
 
     return (
         <div className="page">
@@ -17,6 +18,18 @@ const Modules = () => {
 
             <section>
                 <p>My reviews and experiences from NUS Computer Science modules.</p>
+
+                <h3>Year 2 Semester 2</h3>
+                <ul className="blog-list">
+                    {y2s2.map((mod) => (
+                        <li key={mod.code}>
+                            <Link to={`/modules/${mod.code}`}>
+                                <strong>{mod.code}</strong> - {mod.name}
+                                <span style={{ float: 'right', color: 'var(--text-muted)' }}>{mod.grade}</span>
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
 
                 <h3>Year 2 Semester 1</h3>
                 <ul className="blog-list">

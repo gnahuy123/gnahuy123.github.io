@@ -65,7 +65,19 @@ const moduleData = [
         semester: 'Y2S1',
         grade: 'A',
     },
+    // Y2S2 Modules
+    {
+        code: 'CS2109S',
+        name: 'Introduction to AI and Machine Learning',
+        semester: 'Y2S2',
+        grade: 'A',
+    },
+    {
+        code: 'CS2106',
+        name: 'Introduction to Operating Systems',
+        semester: 'Y2S2',
+        grade: 'A-',
+    },
 ];
 
 export default moduleData;
-

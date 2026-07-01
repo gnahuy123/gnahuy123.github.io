@@ -10,7 +10,7 @@ const experienceData = [
     {
         role: "Full Stack Developer Intern",
         company: "ECICS Pte Limited",
-        description: "",
+        description: "Interned at an SME with more autonomy to design and work on a product end-to-end. I was immersed in the full SDLC, but there was also less hand-holding.",
         start_time: new Date('2026-01-05'),
         end_time: null
     }
